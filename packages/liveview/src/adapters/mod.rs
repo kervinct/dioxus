@@ -7,6 +7,11 @@ pub mod axum_adapter;
 #[cfg(feature = "axum")]
 pub use axum_adapter::*;
 
+#[cfg(feature = "poem")]
+pub mod poem_adapter;
+#[cfg(feature = "poem")]
+pub use poem_adapter::*;
+
 /// A trait for servers that can be used to host a LiveView app.
 pub trait LiveviewRouter {
     /// Create a new router.

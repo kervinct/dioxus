@@ -33,16 +33,21 @@ generational-box = { workspace = true }
 # axum
 axum = { workspace = true, optional = true, features = ["ws"] }
 
+# poem
+poem = { workspace = true, optional = true, features = ["websocket"]}
+
 [dev-dependencies]
 pretty_env_logger = { version = "0.5.0" }
 tokio = { workspace = true, features = ["full"] }
 axum = { workspace = true, features = ["ws"] }
+poem = { workspace = true, features = ["websocket"] }
 tower = { workspace = true }
 dioxus = { workspace = true }
 
 [features]
 default = ["hot-reload"]
 axum = ["dep:axum"]
+poem = ["dep:poem"]
 hot-reload = ["dioxus-hot-reload"]
 
 [[example]]
@@ -52,3 +57,7 @@ required-features = ["axum"]
 [[example]]
 name = "axum_stress"
 required-features = ["axum"]
+
+[[example]]
+name = "poem"
+required-features = ["poem"]
